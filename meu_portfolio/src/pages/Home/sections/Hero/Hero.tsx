@@ -12,11 +12,17 @@ export function Hero() {
         height: "100vh",
         backgroundColor: theme.palette.primary.main,
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+        [theme.breakpoints.up('xs')]: {  //<= mobile
+           paddingTop: "185px"
+        },
+        [theme.breakpoints.up('md')]: {  //>= mobile
+            paddingTop: "0"
+         }
     }))
 
     const StyledImg = styled("img")(({ theme }) => ({
-        width: "80%",
+        width: "75%",
         borderRadius: "50%",
         border: `1px solid ${theme.palette.primary.contrastText}`
     }))
